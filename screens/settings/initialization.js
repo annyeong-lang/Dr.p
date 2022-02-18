@@ -1,6 +1,8 @@
 import React from "react"
 import {Pressable,Modal, Button,Box} from "native-base"
 import { useState } from "react"
+import deleted from "./format"
+
 export default function Format(){
    const [showModal, setShowModal] = useState(false)
   return (
@@ -28,6 +30,7 @@ export default function Format(){
               <Button
               colorScheme="violet"
                 onPress={() => {
+                  deleted
                   setShowModal(false)
                 }}
                 _text={{color:"white"}}
