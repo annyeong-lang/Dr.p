@@ -4,16 +4,22 @@ import { NavigationContainer } from '@react-navigation/native';
  import Main from './main';
   import As from './analysis';
   import Rs from './result';
+  import Camera from './camera';
+  import Wp from './withPicture';
    const Stack = createStackNavigator();
     function App() { return (
        <NavigationContainer> 
-       <Stack.Navigator initialRouteName="Result">
+       <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={Main}
-        options={{ title: '메인화면' }}/>
+        options={{ title: '' }}/>
          <Stack.Screen name="analysis" component={As} 
-         options={{ title: '상세화면' }}/>
+         options={{ title: '' }}/>
          <Stack.Screen name="Result" component={Rs}
-        options={{ title: '결과 화면' }}/>
+        options={{ title: '' }}/>
+        <Stack.Screen name="Camera" component={Camera}
+        options={{ title: '' }}/>
+        <Stack.Screen name="withPicture" component={Wp}
+        options={{ title: '' }}/>
           </Stack.Navigator>
            </NavigationContainer> ); }
            export default App;

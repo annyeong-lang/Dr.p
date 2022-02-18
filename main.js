@@ -10,8 +10,11 @@ import AssetExample from './components/AssetExample';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function main () {
+
+export default function main ({ navigation }) {
   return (
     <View style={Styles.container}>
     <StatusBar style="auto" />
@@ -25,10 +28,10 @@ export default function main () {
       </View>
 
       <View style={Styles.btnSpace}>
-        <TouchableOpacity onPress={() => this.goMainScreen()}>
+        <TouchableOpacity onPress={() => navigation.navigate('analysis')}>
         <Text style={Styles.bStyle1} >진단 시작</Text>
         </TouchableOpacity>
-      <br/>
+     
 
         <TouchableOpacity>
         <Text style={Styles.bStyle1} >피부 기록 보기</Text></TouchableOpacity>
@@ -66,6 +69,7 @@ color:"white",
    color:"white",
  marginTop: 160,
  fontWeight:"700",
+ fontSize:20
 
   },
 
@@ -74,16 +78,18 @@ color:"white",
   },
   btnSpace:
   {
-    margin:40,
+    margin:70,
    flex:1,
-   marginTop:80,
+   marginTop:240,
+  justifyContent: 'space-between',
   },
   bStyle1:
   {
-    fontWeight:"500",
+    fontSize:22,
+    fontWeight:"300",
      color:"black",
-     width: '130px',
-     height: '30px',
+     width: '160px',
+     height: '40px',
      backgroundColor:"white",
     textAlign:"center",
     textAlignVertical:"center"

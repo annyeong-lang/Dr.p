@@ -12,9 +12,10 @@ import AssetExample from './components/AssetExample';
 import { Card } from 'react-native-paper';
 
 import CameraRoll from "@react-native-community/cameraroll";
+import Icon from 'react-native-vector-icons/AntDesign';
 
 
-export default function Main () {
+export default function Main ({navigation}) {
   const [type, setType] = useState("면포성 여드름");
   const [detail, setDetail] = useState("여드름의 초기 단계인 면포성 여드름입니다. \n좁쌀 여드름이라고도 하는  이 면포성 여드름은 \n 아직 여드름 초기 단계입니다. "); 
 
@@ -36,8 +37,28 @@ export default function Main () {
  <TouchableOpacity style={Styles.btnStyle} >
  <Text  style={Styles.btntxtStyle}> 추천 약과 관리 방법</Text></TouchableOpacity>
  </View>
+
+ 
  <View style={Styles.bottom}>
- <Text>진단결과</Text>
+<View style={{alignItems:"center"}}>
+          <Icon name="check" size={50} color="#000"  onPress={() => navigation.navigate('analysis')}/>
+        <Text style={{fontWeight:500}} >진단</Text>
+          </View>
+<View style={{alignItems:"center"}}>
+          <Icon name="bars" size={50} color="#000" />
+                    <Text style={{fontWeight:500}} >결과</Text>
+          </View>
+<View style={{alignItems:"center"}}>
+          <Icon name="map" size={50} color="#000" />
+                    <Text style={{fontWeight:500}} >지도</Text>
+
+          </View>
+<View style={{alignItems:"center"}}>
+          <Icon name="setting" size={50} color="#000" />
+                    <Text style={{fontWeight:500}} >설정</Text>
+
+           </View>
+
  </View> 
  
   </View>
@@ -92,9 +113,6 @@ fontWeight: "600",
 detailStyle:{
 fontSize:15,
 marginTop:70
-
-
-
 },
 submain:{
     flex:0.5,
@@ -102,8 +120,6 @@ submain:{
     alignItems: 'center',
     justifyContent: "center", 
     width:"100%",
-
-
 }
 ,
 midbt:
@@ -114,11 +130,13 @@ midbt:
 
 },
 bottom:
-{
-  flex:0.5
-  ,backgroundColor:"yellow",
+{    flexDirection: 'row',
+  flex:0.4
+  ,backgroundColor:"white",
    alignItems: 'center',
-width:"100%"
+width:"100%",
+  justifyContent: 'space-around',
+
 }
 ,
  

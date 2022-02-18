@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-export default function ImagePickerExample({ navigation }) {
+export default function ImagePickerExample({ navigation, route }) {
   const [image, setImage] = useState(null);
+  const {img}=route.params;
+  setImage(img);
 
   useEffect(() => {
     (async () => {
@@ -39,33 +41,6 @@ export default function ImagePickerExample({ navigation }) {
       setImage(result.uri);
     }
   };
-  if (image === null)
-    return (
-      <View style={Styles.container}>
-        <View style={Styles.main}>
-          <Text style={Styles.logo}>
-            진단받을 피부 부위
-            {'\n'}사진을 첨부해주세요
-          </Text>
-          <Text style={Styles.logo2}>
-            밝은 곳에서 피부가 잘 보이도록{'\n'}
-            사진을 촬영해주세요
-          </Text>
-        </View>
-        <View style={Styles.btnSpace}>
-          <TouchableOpacity style={Styles.bStyle1} onPress={pickImage}>
-            <Text style={Styles.btStyle1}>갤러리</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={Styles.bStyle2}>
-            <Text
-              style={Styles.btStyle2}
-              onPress={() => navigation.navigate('Camera')}>
-              카메라
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
 
   return (
     <View style={Styles.container}>
@@ -78,29 +53,10 @@ export default function ImagePickerExample({ navigation }) {
           밝은 곳에서 피부가 잘 보이도록{'\n'}
           사진을 촬영해주세요
         </Text>
-
-        <View
-          style={{
-            alignItems: 'center',
-            marginTop: 20,
-            
-            justifyContent: 'space-between',
-          }}>
-          {image && (
-            <Image
-              source={{ uri: image }}
-              style={{ width: 200, height: 200, alignContent: 'center' }}
-            />
-          )}
-          <TouchableOpacity
-            style={Styles.btStyle}
-            onPress={() => navigation.navigate('Result')}>
-            >
-            <Text style={{ fontSize: 20, textAlign: 'center' ,textAlignVertical:'center'}}>
-              진단 결과 보기
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <View style={{alignItems:'center', marginTop:20}}>
+        {image && (
+        <Image source={{ uri: image }} style={{ width: 200, height: 200 , alignContent: 'center' }} />
+      )}</View>
       </View>
       <View style={Styles.btnSpace}>
         <TouchableOpacity style={Styles.bStyle1} onPress={pickImage}>
@@ -147,17 +103,6 @@ const Styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  btStyle: {
-    alignItems:'center',
-    width: '80%',
-    borderTopRightRadius: '5px',
-    borderBottomLeftRadius: '5px',
-    borderBottomRightRadius: '5px',
-    borderBottomStartRadius: '5px',
-    borderTopLeftRadius: '5px',
-    backgroundColor: '#8A47EB',
-    height:'20%'
-  },
   bStyle1: {
     width: '45%',
     height: '80%',
