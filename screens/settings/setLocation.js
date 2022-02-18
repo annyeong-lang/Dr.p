@@ -12,10 +12,10 @@ export default function Location() {
      <HStack alignItems="center" space={120} ml="7" py="4">
       <Text fontSize="xl" color="white">위치 서비스 사용</Text>
       <Switch size="md" 
-       offTrackColor="white"
-        onTrackColor="violet.500"
+       offTrackColor="gray.200"
+        onTrackColor="violet.600"
         onThumbColor="white"
-        offThumbColor="violet.500"/>
+        offThumbColor="violet.600"/>
     </HStack>
  )
 }
