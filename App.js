@@ -1,7 +1,7 @@
 import * as React from 'react'; 
 import { NavigationContainer } from '@react-navigation/native';
  import { createStackNavigator } from '@react-navigation/stack'; 
- import Main from './main';
+ import Main from './start';
   import As from './analysis';
   import Rs from './result';
   import Camera from './camera';
@@ -23,5 +23,6 @@ import { NavigationContainer } from '@react-navigation/native';
           </Stack.Navigator>
            </NavigationContainer> ); }
            export default App;
+           
 
 
