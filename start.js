@@ -14,7 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-export default function main ({ navigation }) {
+export default function start ({ navigation }) {
   return (
     <View style={Styles.container}>
     <StatusBar style="auto" />
