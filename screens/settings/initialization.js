@@ -2,14 +2,14 @@ import React from "react"
 import {Pressable,Modal, Button,Box} from "native-base"
 import { useState } from "react"
 import deleted from "./format"
-const color="violet.300"
+const color="#F6F0FF"
 export default function Format(){
    const [showModal, setShowModal] = useState(false)
   return (
       <Pressable>
       <Box p="5" rounded="8" bg={color}>
          <Pressable onPress={() => setShowModal(true)}>
-         <Box ml="2" _text={{fontSize:"xl",color:"white"}} >진단 결과 초기화 하기</Box></Pressable>
+         <Box ml="2" _text={{fontSize:"xl",color:"#8A47EB"}} >진단 결과 초기화 하기</Box></Pressable>
           <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <Modal.Content maxWidth="400px">
           <Modal.CloseButton />

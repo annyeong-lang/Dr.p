@@ -2,7 +2,7 @@ import React from "react"
 import { Entypo } from "@expo/vector-icons"
 import { StatusBar } from 'expo-status-bar';
 import {Icon,VStack,NativeBaseProvider,IconButton,Divider,Box} from "native-base"
-//import Permission from "./screens/settings/setLocation"
+import Permission from "./setLocation"
 import Format from "./initialization"
 
 const color="violet.300"
