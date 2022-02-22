@@ -5,11 +5,12 @@ import { Entypo } from "@expo/vector-icons"
 import { StyleSheet, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import {Text,Center,NativeBaseProvider,Button,IconButton, Icon,VStack} from "native-base"
+
 const color="violet.400"
-function MoreInfo(props){
+function MoreInfo({navigation}){
   return(
     <Center my="4">
-    <Button  onPress={() => console.log("hello world")} bg="violet.400" >
+    <Button  onPress={() => navigation.navigate('Care')} bg="violet.400" >
     <Text mx="8" my="1" fontSize="xl" color="white">자세히 알아보기</Text>
     </Button></Center> 
   )
@@ -22,21 +23,14 @@ function Map(props){
   )
 }
 
-export default () => {
+export default function Durgstore({navigation}){
   return (
     <NativeBaseProvider>
     <StatusBar>
     </StatusBar>
-    <IconButton ml="7" mt="20" 
-      _hover={{
-       bg:{color}
-       }}
-      _pressed={{
-      bg:{color}
-      }}
-      _focus={{
-        bg:{color}
-        }}
+    <IconButton ml="7" mt="20"_hover={{ bg:{color} }}
+                              _pressed={{ bg:{color} }}
+                              onPress={() => navigation.navigate('Home')}
     icon={<Icon as={Entypo} name="emoji-happy"
     ></Icon>}></IconButton>
     <VStack mt={-1}>
