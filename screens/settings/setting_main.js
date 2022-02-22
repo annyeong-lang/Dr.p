@@ -5,7 +5,7 @@ import {Icon,VStack,NativeBaseProvider,IconButton,Divider,Box} from "native-base
 import Permission from "./setLocation"
 import Format from "./initialization"
 
-const color="violet.300"
+const color="#F6F0FF"
 
 export default function Setting({navigation}){
   return (
