@@ -4,7 +4,7 @@ export default function Explanation(props) {
   return (
   <Container mt="2" >
     <Box pl="7" py="2">
-      <Text fontSize="2xl" color="violet.400">
+      <Text fontSize="2xl" color="black">
         <Text bold>{props.name}</Text>님의 위치와 가까운 약국 지도입니다.
       </Text> 
     </Box>

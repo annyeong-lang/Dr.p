@@ -6,11 +6,13 @@ import { StyleSheet, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import {Text,Center,NativeBaseProvider,Button,IconButton, Icon,VStack} from "native-base"
 
-const color="violet.400"
+const color="#8A47EB"
 function MoreInfo({navigation}){
   return(
     <Center my="4">
-    <Button  onPress={() => navigation.navigate('Care')} bg="violet.400" >
+    <Button  onPress={() => navigation.navigate('Care')} bg="#8A47EB"
+    _hover={{ bg:{color} }}
+    _pressed={{ bg:{color} }} >
     <Text mx="8" my="1" fontSize="xl" color="white">자세히 알아보기</Text>
     </Button></Center> 
   )

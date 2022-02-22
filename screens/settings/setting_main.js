@@ -18,11 +18,11 @@ export default function Setting({navigation}){
     icon={<Icon as={Entypo} name="emoji-happy"
     ></Icon>}></IconButton>
     <VStack>
-         <Divider mb="1" bg="purple.600"/>
+         <Divider mb="1" bg="#8A47EB"/>
         <Permission />
-        <Divider mb="1" bg="purple.600"/>
+        <Divider mb="1" bg="#8A47EB"/>
         <Format />
-        <Divider mb="1" bg="purple.600"/>
+        <Divider mb="1" bg="#8A47EB"/>
         </VStack>
         </Box>
     </NativeBaseProvider>
