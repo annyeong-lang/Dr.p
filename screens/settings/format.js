@@ -1,12 +1,12 @@
 import { getDocs,collection,deleteDoc ,doc} from 'firebase/firestore';
-import db from "../../fbase"
+import dbService from "../../fbase"
 
 function deleted(){
-  const querySnapshot = getDocs(collection(db, "tmp"));
+  const querySnapshot = getDocs(collection(dbService, "tmp"));
   querySnapshot.then((docs) => {
   docs.forEach(element => {
   var Id=element.id
-  deleteDoc(doc(db, "tmp",Id))
+  deleteDoc(doc(dbService, "tmp",Id))
   console.log(Id)
   });
 });
@@ -14,7 +14,7 @@ function deleted(){
 querySnapshot.then((docs) => {
     docs.forEach(element => {
     var Id=element.id
-    deleteDoc(doc(db, "tmp",Id))
+    deleteDoc(doc(dbService, "tmp",Id))
     console.log(Id)
     });
   });
