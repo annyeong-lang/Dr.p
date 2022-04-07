@@ -6,12 +6,8 @@ import{ View, Text, Dimensions, StyleSheet, ScrollView, Button,TouchableOpacity 
 import Constants from 'expo-constants';
 
 // You can import from local files
-import AssetExample from './components/AssetExample';
-
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
-
-import CameraRoll from "@react-native-community/cameraroll";
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
@@ -46,15 +42,15 @@ export default function Main ({navigation}) {
           </View>
 <View style={{alignItems:"center"}}>
           <Icon name="bars" size={50} color="#000" />
-                    <Text style={{fontWeight:500}} >결과</Text>
+                    <Text style={{fontWeight:500}} onPress={() => navigation.navigate('Home')}>결과</Text>
           </View>
 <View style={{alignItems:"center"}}>
           <Icon name="map" size={50} color="#000" />
-                    <Text style={{fontWeight:500}} >지도</Text>
+                    <Text style={{fontWeight:500}}  onPress={() => navigation.navigate('drugStoreScreen')}>지도</Text>
 
           </View>
 <View style={{alignItems:"center"}}>
-          <Icon name="setting" size={50} color="#000" />
+          <Icon name="setting" size={50} color="#000" onPress={() => navigation.navigate('SettingMain')} />
                     <Text style={{fontWeight:500}} >설정</Text>
 
            </View>
@@ -145,11 +141,11 @@ width:"100%",
   height:50,
    textAlign:"center",
     backgroundColor:"#8A47EB"
-    ,borderTopRightRadius:"5px",
-    borderBottomLeftRadius:"5px",
-    borderBottomRightRadius:"5px",
-    borderBottomStartRadius:"5px",
-    borderTopLeftRadius:"5px",
+    ,borderTopRightRadius:5,
+    borderBottomLeftRadius:5,
+    borderBottomRightRadius:5,
+    borderBottomStartRadius:5,
+    borderTopLeftRadius:5,
         alignItems: 'center',
    
   },

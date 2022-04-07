@@ -9,6 +9,8 @@ import {
   Text,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import firebase from '@react-native-firebase/storage';
+
 
 export default function ImagePickerExample({ navigation }) {
   const [image, setImage] = useState(null);
@@ -25,6 +27,14 @@ export default function ImagePickerExample({ navigation }) {
     })();
   }, []);
 
+ function uploadImageToStorage (path, imageName)  {
+    let reference = storage().ref(imageName);         // 2
+    let task = reference.putFile(path);               // 3
+
+    task.then(() => {                                 // 4
+        console.log('Image uploaded to the bucket!');
+    }).catch((e) => console.log('uploading image error => ', e));
+}
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -37,6 +47,8 @@ export default function ImagePickerExample({ navigation }) {
 
     if (!result.cancelled) {
       setImage(result.uri);
+      uploadImageToStorage('/images/',uri);
+      
     }
   };
   if (image === null)
@@ -94,8 +106,7 @@ export default function ImagePickerExample({ navigation }) {
           )}
           <TouchableOpacity
             style={Styles.btStyle}
-            onPress={() => navigation.navigate('Result')}>
-            >
+            onPress={() => navigation.navigate('Tensorflow')}>
             <Text style={{ fontSize: 20, textAlign: 'center' ,textAlignVertical:'center'}}>
               진단 결과 보기
             </Text>
@@ -150,11 +161,11 @@ const Styles = StyleSheet.create({
   btStyle: {
     alignItems:'center',
     width: '80%',
-    borderTopRightRadius: '5px',
-    borderBottomLeftRadius: '5px',
-    borderBottomRightRadius: '5px',
-    borderBottomStartRadius: '5px',
-    borderTopLeftRadius: '5px',
+    borderTopRightRadius: 5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomStartRadius: 5,
+    borderTopLeftRadius: 5,
     backgroundColor: '#8A47EB',
     height:'20%'
   },
@@ -172,12 +183,11 @@ const Styles = StyleSheet.create({
     color: 'black',
     backgroundColor: '#F2F2F2',
     textAlign: 'center',
-    textAlignVertical: 'center',
-    borderTopRightRadius: '5px',
-    borderBottomLeftRadius: '5px',
-    borderBottomRightRadius: '5px',
-    borderBottomStartRadius: '5px',
-    borderTopLeftRadius: '5px',
+    borderTopRightRadius: 5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomStartRadius: 5,
+    borderTopLeftRadius: 5,
   },
   btStyle2: {
     fontWeight: '500',
@@ -187,10 +197,10 @@ const Styles = StyleSheet.create({
     backgroundColor: '#8A47EB',
     textAlign: 'center',
     textAlignVertical: 'center',
-    borderTopRightRadius: '5px',
-    borderBottomLeftRadius: '5px',
-    borderBottomRightRadius: '5px',
-    borderBottomStartRadius: '5px',
-    borderTopLeftRadius: '5px',
+    borderTopRightRadius: 5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomStartRadius: 5,
+    borderTopLeftRadius: 5,
   },
 });

@@ -5,13 +5,11 @@ import{ View, Text, Dimensions, StyleSheet, ScrollView, Button,TouchableOpacity 
 import Constants from 'expo-constants';
 
 // You can import from local files
-import AssetExample from './components/AssetExample';
-
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
 
 
 export default function start ({ navigation }) {
@@ -33,7 +31,7 @@ export default function start ({ navigation }) {
         </TouchableOpacity>
      
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Text style={Styles.bStyle1} >피부 기록 보기</Text></TouchableOpacity>
         
       </View>
@@ -93,11 +91,11 @@ color:"white",
      backgroundColor:"white",
     textAlign:"center",
     textAlignVertical:"center"
-    ,borderTopRightRadius:"5px",
-    borderBottomLeftRadius:"5px",
-    borderBottomRightRadius:"5px",
-    borderBottomStartRadius:"5px",
-    borderTopLeftRadius:"5px"
+    ,borderTopRightRadius:5,
+    borderBottomLeftRadius:5,
+    borderBottomRightRadius:5,
+    borderBottomStartRadius:5,
+    borderTopLeftRadius:5
   },
     
   
