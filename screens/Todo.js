@@ -1,4 +1,4 @@
-import { authService, dbService } from "./fbase";
+import { authService, dbService } from "../fbase";
 import {
   addDoc,
   collection,

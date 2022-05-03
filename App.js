@@ -1,15 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Login from "./Login";
-import Password from "./Password";
-import SignUp from "./SignUp";
-import Start from "./Start";
-import Home from "./Home";
-import Todo from "./Todo";
-import Carelist from "./Carelist";
-import Care from "./Care";
-import Analysis from "./Analysis";
-import Result from "./Result";
+import Login from "./screens/Login";
+import Password from "./screens/Password";
+import SignUp from "./screens/SignUp";
+import Start from "./screens/Start";
+import Home from "./screens/Home";
+import Todo from "./screens/Todo";
+import Carelist from "./screens/Carelist";
+import Care from "./screens/Care";
+import Analysis from "./screens/Analysis";
+import Result from "./screens/Result";
+import Drugstore from "./screens/Drugstore";
+import Setting from "./screens/Setting";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -64,6 +66,16 @@ const App = () => {
         <Stack.Screen
           name="Care"
           component={Care}
+          options={{ headerTitleStyle: { color: "white" } }}
+        />
+        <Stack.Screen
+          name="Drugstore"
+          component={Drugstore}
+          options={{ headerTitleStyle: { color: "white" } }}
+        />
+        <Stack.Screen
+          name="Setting"
+          component={Setting}
           options={{ headerTitleStyle: { color: "white" } }}
         />
       </Stack.Navigator>

@@ -1,4 +1,4 @@
-import { dbService } from "./fbase";
+import { dbService } from "../fbase";
 import { doc, getDoc } from "firebase/firestore";
 
 import { Fontisto } from "@expo/vector-icons";
@@ -29,7 +29,7 @@ const Care = ({ route }) => {
       <View style={styles.pic}>
         <Image
           style={{ width: 200, height: 200 }}
-          source={require("./noscarna.jpg")}
+          source={require("../noimg.png")}
         />
       </View>
       <View style={styles.info}>
@@ -50,6 +50,12 @@ const Care = ({ route }) => {
             <Text style={{ fontSize: 20, lineHeight: 35 }}>
               {care.description}
             </Text>
+            {ingr == null ? null : (
+              <Text style={{ fontSize: 20, lineHeight: 35 }}>
+                {"\n"}부작용:{"\n"}
+                {care.side}
+              </Text>
+            )}
           </View>
         </ScrollView>
       </View>

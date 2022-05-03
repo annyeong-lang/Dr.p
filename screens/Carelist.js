@@ -1,4 +1,4 @@
-import { dbService } from "./fbase";
+import { dbService } from "../fbase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { Fontisto } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
@@ -28,8 +28,7 @@ const Carelist = ({ navigation, route }) => {
       <View style={styles.pic}>
         <Image
           style={{ width: 200, height: 200 }}
-          // https://090k.tistory.com/152
-          source={require("./noscarna.jpg")}
+          source={require("../noimg.png")}
         />
       </View>
       <View style={styles.list}>

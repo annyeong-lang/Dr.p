@@ -1,4 +1,4 @@
-import { dbService, authService } from "./fbase";
+import { dbService, authService } from "../fbase";
 import { signOut } from "firebase/auth";
 import {
   query,
@@ -160,7 +160,9 @@ const Home = ({ navigation }) => {
                         width: 124,
                         height: 124,
                       }}
-                      source={require("./noscarna.jpg")}
+                      source={{
+                        uri: `file:///storage/emulated/0/Pictures/Images/${result.fileName}`,
+                      }}
                     />
                   </TouchableOpacity>
                   <View style={{ marginLeft: 30 }}>
@@ -218,9 +220,9 @@ const Home = ({ navigation }) => {
                       </TouchableOpacity>
                     </View>
                     <Text style={styles.resultText}>
-                      {result.date.toString().substring(0, 4)}년{" "}
-                      {result.date.toString().substring(4, 6)}월{" "}
-                      {result.date.toString().substring(6, 8)}일
+                      {new Date(result.date).getFullYear()}년{" "}
+                      {new Date(result.date).getMonth() + 1}월{" "}
+                      {new Date(result.date).getDate()}일{" "}
                     </Text>
                     <Text style={styles.resultText}>결과: {result.result}</Text>
                     <Text style={styles.resultText}>관리: {result.care}</Text>
@@ -244,12 +246,17 @@ const Home = ({ navigation }) => {
           <Fontisto name="applemusic" size={24} color="black" />
           <Text style={styles.menuText}>결과</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("Carelist")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Drugstore")}>
           <Fontisto name="applemusic" size={24} color="black" />
           <Text style={styles.menuText}>지도</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Fontisto name="applemusic" size={24} color="black" />
+          <Fontisto
+            onPress={() => navigation.navigate("Setting")}
+            name="applemusic"
+            size={24}
+            color="black"
+          />
           <Text style={styles.menuText}>설정</Text>
         </TouchableOpacity>
       </View>

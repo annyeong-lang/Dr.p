@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { dbService } from "./fbase";
+import { dbService } from "../fbase";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Fontisto } from "@expo/vector-icons";
@@ -22,7 +22,12 @@ const Result = ({ navigation, route }) => {
         <View style={styles.hello}>
           <Text style={styles.title}>{name}</Text>
           <Text
-            style={{ fontSize: 20, marginVertical: 50, marginHorizontal: 30 }}
+            style={{
+              fontSize: 20,
+              marginVertical: 25,
+              marginHorizontal: 30,
+              lineHeight: 35,
+            }}
           >
             {description}
           </Text>
@@ -83,11 +88,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   pic: {
-    flex: 4,
+    flex: 3.5,
     backgroundColor: "orange",
   },
   hello: {
-    flex: 6,
+    flex: 6.5,
   },
   title: {
     fontSize: 25,
