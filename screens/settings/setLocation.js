@@ -1,4 +1,4 @@
-
+import { useState } from "react"
 import React from "react"
 import {Button,HStack,Center} from "native-base"
 import * as Location from 'expo-location';
@@ -34,4 +34,4 @@ function perm(){
         </HStack>
     );
 
-};
+}
