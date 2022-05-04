@@ -2,7 +2,7 @@
 import React from "react"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import {HStack,VStack,NativeBaseProvider,IconButton,Divider,Box} from "native-base"
+import {HStack,VStack,NativeBaseProvider,IconButton,Divider,Box,Center} from "native-base"
 import Permission from "./setLocation"
 import Format from "./initialization"
 
