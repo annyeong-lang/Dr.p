@@ -27,8 +27,8 @@ function perm(){
         <HStack>
             <Center p="5" ml="3" mr="12" _text={{fontSize:"xl",color:"#600FD4"}}>위치 서비스 사용</Center>
             <Button onPress={pressed} ml="4" size="lg" mt="3" mb="3"
-             _hover={{bg:{buttonColor}}}
-             _pressed={{bg:{buttonColor}}}
+             _hover={{bg:"#8A47EB"}}
+             _pressed={{bg:"#8A47EB"}}
              bg={buttonColor}
              >{is}</Button>
         </HStack>
