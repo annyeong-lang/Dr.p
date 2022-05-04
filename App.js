@@ -1,32 +1,28 @@
-import React from "react"
-import { Entypo } from "@expo/vector-icons"
-import { StatusBar } from 'expo-status-bar';
-import {Icon,VStack,NativeBaseProvider,IconButton,Divider,Box} from "native-base"
-import Permission from "./setLocation"
-import Format from "./initialization"
-
-const color="#F6F0FF"
-
-export default function Setting({navigation}){
-  return (
-    <NativeBaseProvider >
-    <StatusBar />
-    <Box bg={color} flex={1}>
-    <IconButton ml="7" mt="20"_hover={{ bg:{color} }}
-                              _pressed={{ bg:{color} }}
-                              onPress={() => navigation.navigate('Home')}
-    icon={<Icon as={Entypo} name="emoji-happy"
-    ></Icon>}></IconButton>
-    <VStack>
-         <Divider mb="1" bg="#8A47EB"/>
-        <Permission />
-        <Divider mb="1" bg="#8A47EB"/>
-        <Format />
-        <Divider mb="1" bg="#8A47EB"/>
-        </VStack>
-        </Box>
-    </NativeBaseProvider>
-  )
-}
+import * as React from 'react'; 
+import { NavigationContainer } from '@react-navigation/native';
+ import { createStackNavigator } from '@react-navigation/stack'; 
+ import Main from './start';
+  import As from './analysis';
+  import Rs from './result';
+  import Camera from './camera';
+  import Wp from './withPicture';
+   const Stack = createStackNavigator();
+    function App() { return (
+       <NavigationContainer> 
+       <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen name="Main" component={Main}
+        options={{ title: '' }}/>
+         <Stack.Screen name="analysis" component={As} 
+         options={{ title: '' }}/>
+         <Stack.Screen name="Result" component={Rs}
+        options={{ title: '' }}/>
+        <Stack.Screen name="Camera" component={Camera}
+        options={{ title: '' }}/>
+        <Stack.Screen name="withPicture" component={Wp}
+        options={{ title: '' }}/>
+          </Stack.Navigator>
+           </NavigationContainer> ); }
+           export default App;
+           
 
 
