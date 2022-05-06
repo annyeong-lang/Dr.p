@@ -11,6 +11,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  Image
 } from "react-native";
 
 const Login = ({ navigation }) => {
@@ -19,7 +20,7 @@ const Login = ({ navigation }) => {
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.header}>
-        <Text style={{ fontSize: 120, color: "#8A47EB" }}>Dr.P</Text>
+        <Image source={require("./logo_purple.png")} />
         <Text style={{ fontSize: 30 }}>피부 홈케어의 시작</Text>
       </View>
       <View style={styles.input}>
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 4.2,
     justifyContent: "flex-end",
+    alignItems: "center",
   },
   input: {
     flex: 3,

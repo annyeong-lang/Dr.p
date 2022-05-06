@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import{ View, Text, Dimensions, StyleSheet, ScrollView, Button,TouchableOpacity } from 'react-native';
+import{ View, Text, Dimensions, StyleSheet, ScrollView, Button,TouchableOpacity, Image } from 'react-native';
 import Constants from 'expo-constants';
 
 // You can import from local files
@@ -15,11 +15,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function start ({ navigation }) {
   return (
     <View style={Styles.container}>
-    <StatusBar style="auto" />
+    <View style={{flex:8}}/>
       <View style={Styles.main}>
-       <Text style={Styles.logo}>
-         DR.P
-       </Text>
+
+      <Image style={{margin:10}}source={require("./logo_white.png")} />
        <Text style={Styles.text}>
        피부 홈케어의 시작
        </Text>
@@ -35,6 +34,7 @@ export default function start ({ navigation }) {
         <Text style={Styles.bStyle1} >피부 기록 보기</Text></TouchableOpacity>
         
       </View>
+      <View style={{flex:1}}/>
     </View>
   );
 }
@@ -46,7 +46,7 @@ const Styles = StyleSheet.create({
   container : {
       flex:1,
       backgroundColor:"#8A47EB",
-    justifyContent: "center", alignItems: "center"
+    alignItems: "center"
 
 
   },
@@ -65,19 +65,19 @@ color:"white",
   {
    textAlign: 'center',
    color:"white",
- marginTop: 160,
+
  fontWeight:'700',
- fontSize:20
+ fontSize:30
 
   },
 
   main:{
-      flex: 3
+      flex: 5
   },
   btnSpace:
   {
     margin:70,
-   flex:1,
+   flex:5,
    marginTop:240,
   justifyContent: 'space-between',
   },
