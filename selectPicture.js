@@ -67,7 +67,7 @@ const Styles = StyleSheet.create({
 
   logo: {
     fontSize: 30,
-    height: '17%',
+    height: 50,
     color: 'black',
     marginTop: 60,
     fontWeight: 'bold',
@@ -90,26 +90,26 @@ const Styles = StyleSheet.create({
 
   btStyle: {
     alignItems:'center',
-    width: '80%',
+    width: 80,
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     borderBottomStartRadius: 5,
     borderTopLeftRadius: 5,
     backgroundColor: '#8A47EB',
-    height:'20%'
+    height:20
   },
   bStyle1: {
-    width: '45%',
-    height: '80%',
+    width: 45,
+    height: 80,
   },
   bStyle2: {
-    width: '45%',
-    height: '80%',
+    width: 45,
+    height: 80,
   },
   btStyle1: {
     fontSize: 30,
-    fontWeight: '500',
+    fontWeight: 500,
     color: 'black',
     backgroundColor: '#F2F2F2',
     textAlign: 'center',
@@ -120,7 +120,7 @@ const Styles = StyleSheet.create({
     borderTopLeftRadius: 5,
   },
   btStyle2: {
-    fontWeight: '500',
+    fontWeight: 500,
     color: 'black',
     fontSize: 30,
 

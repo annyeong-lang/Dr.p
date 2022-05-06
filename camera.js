@@ -195,15 +195,15 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     alignItems: 'center',
     borderRadius: 50,
-    width: '100px',
-    height: '100px',
+    width: 100,
+    height: 100,
   },
   text: {
     fontSize: 18,
     color: 'white',
   }, logo: {
     fontSize: 30,
-    height: '17%',
+    height: 50,
     color: 'black',
     marginTop: 60,
     fontWeight: 'bold',
@@ -225,16 +225,16 @@ const styles = StyleSheet.create({
   },
 
   bStyle1: {
-    width: '45%',
-    height: '80%',
+    width: 45,
+    height: 100,
   },
   bStyle2: {
-    width: '45%',
-    height: '80%',
+    width: 45,
+    height: 100,
   },
   btStyle1: {
     fontSize: 30,
-    fontWeight: '500',
+    fontWeight: 500,
     color: 'black',
     backgroundColor: '#F2F2F2',
     textAlign: 'center',
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 5,
   },
   btStyle2: {
-    fontWeight: '500',
+    fontWeight: 500,
     color: 'black',
     fontSize: 30,
 

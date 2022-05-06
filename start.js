@@ -39,7 +39,7 @@ export default function start ({ navigation }) {
   );
 }
 
-function goMainScreen(){ this.props.navigation.navigate('As'); } 
+function goMainScreen(){ this.props.navigation.navigate('analysis'); } 
 
 
 const Styles = StyleSheet.create({
@@ -55,8 +55,8 @@ const Styles = StyleSheet.create({
   {
 justifyContent:"center",
 fontSize: 100,
-fontWeight: "500",
-height: '50px',
+fontWeight: 500,
+height: 50,
 textAlign: 'center',
 color:"white",
  marginTop: 170,
@@ -66,7 +66,7 @@ color:"white",
    textAlign: 'center',
    color:"white",
  marginTop: 160,
- fontWeight:"700",
+ fontWeight:700,
  fontSize:20
 
   },
@@ -86,8 +86,8 @@ color:"white",
     fontSize:22,
     fontWeight:"300",
      color:"black",
-     width: '160px',
-     height: '40px',
+     width: 160,
+     height: 40,
      backgroundColor:"white",
     textAlign:"center",
     textAlignVertical:"center"
