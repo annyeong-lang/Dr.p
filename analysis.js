@@ -85,7 +85,7 @@ const Analysis = ({ navigation }) => {
       fileName: filename,
     });
 
-    navigation.navigate("Result", {
+    navigation.navigate("result", {
       acne: num,
       id: docRef.id,
     });
@@ -99,7 +99,7 @@ const Analysis = ({ navigation }) => {
       <Text style={{ fontSize: 20 }}>사진을 촬영해주세요</Text>
       <Image source={require("./noimg.png")} />
       <Pressable
-        onPress={() => navigation.navigate("Result")}
+        onPress={() => navigation.navigate("result")}
         style={styles.pBtn}
       >
         <Text style={{ fontSize: 20, margin: 5, color: "white" }}>

@@ -109,7 +109,7 @@ const Styles = StyleSheet.create({
   },
   btStyle1: {
     fontSize: 30,
-    fontWeight: 500,
+    fontWeight: '500',
     color: 'black',
     backgroundColor: '#F2F2F2',
     textAlign: 'center',
@@ -120,7 +120,7 @@ const Styles = StyleSheet.create({
     borderTopLeftRadius: 5,
   },
   btStyle2: {
-    fontWeight: 500,
+    fontWeight: '500',
     color: 'black',
     fontSize: 30,
 

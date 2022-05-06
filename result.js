@@ -78,7 +78,7 @@ export default function Main({ navigation }) {
             color="black"
             
           />
-          <Text style={{fontWeight:500}}>진단</Text>
+          <Text style={{fontWeight:"bold"}}>진단</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
@@ -87,7 +87,7 @@ export default function Main({ navigation }) {
           }}
         >
           <Foundation name="results" size={42} color="black" />
-          <Text style={{fontWeight:500}}>결과</Text>
+          <Text style={{fontWeight:"bold"}}>결과</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("drugStoreScreen")}>
         <MaterialCommunityIcons
@@ -95,11 +95,11 @@ export default function Main({ navigation }) {
             size={47}
             color="black"
           />
-          <Text style={{fontWeight:500}}>지도</Text>
+          <Text style={{fontWeight:"bold"}}>지도</Text>
         </TouchableOpacity>
         <TouchableOpacity>
         <AntDesign name="setting" size={40} color="black" />
-          <Text style={{fontWeight:500}}>설정</Text>
+          <Text style={{fontWeight:"bold"}}>설정</Text>
         </TouchableOpacity>
         </View>
       </View>

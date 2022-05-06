@@ -55,7 +55,7 @@ const Styles = StyleSheet.create({
   {
 justifyContent:"center",
 fontSize: 100,
-fontWeight: 500,
+fontWeight: '500',
 height: 50,
 textAlign: 'center',
 color:"white",
@@ -66,7 +66,7 @@ color:"white",
    textAlign: 'center',
    color:"white",
  marginTop: 160,
- fontWeight:700,
+ fontWeight:'700',
  fontSize:20
 
   },
@@ -84,7 +84,7 @@ color:"white",
   bStyle1:
   {
     fontSize:22,
-    fontWeight:"300",
+    fontWeight:'300',
      color:"black",
      width: 160,
      height: 40,
