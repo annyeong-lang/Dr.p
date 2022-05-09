@@ -18,7 +18,7 @@ export default function start ({ navigation }) {
     <View style={{flex:8}}/>
       <View style={Styles.main}>
 
-      <Image style={{margin:10}}source={require("./logo_white.png")} />
+      <Image style={{margin:10}} source={require("./logo_white.png")} />
        <Text style={Styles.text}>
        피부 홈케어의 시작
        </Text>
