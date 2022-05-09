@@ -34,7 +34,7 @@ const Analysis = ({ navigation }) => {
 
   const toServer = async (mediaFile) => {
     let schema = "http://";
-    let host = "192.168.35.163";
+    let host = "3.39.23.209";
     let port = "5000";
     let url = "";
     let content_type = "image/jpeg";
