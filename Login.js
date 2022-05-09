@@ -21,7 +21,7 @@ const Login = ({ navigation }) => {
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.header}>
         <Image resizeMode="contain" style={{width: 200,
-    height: 100}}source={require("./logo_purple.png")} />
+    height: 100, marginBottom : 30}}source={require("./logo_purple.png")} />
         <Text style={{ fontSize: 30 }}>피부 홈케어의 시작</Text>
       </View>
       <View style={styles.input}>
