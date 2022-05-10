@@ -20,9 +20,6 @@ querySnapshot.then((docs) => {
   });
 }
 function deleted(){
-  deleting("acne")
-  deleting("care")
-  deleting("carelist")
   deleting("result")
   deleting("todo")
 }
