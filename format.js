@@ -3,10 +3,6 @@ import { useEffect } from "react";
 import dbService from "./fbase";
 import { authService } from "./fbase";
 
-useEffect(()=>{
-  const userId = authService.currentUser.uid;
-}, []);
-
 function deleting(collection_name) {
   const querySnapshot = getDocs(collection(dbService, collection_name));
   querySnapshot.then((docs) => {
@@ -22,7 +18,11 @@ function deleting(collection_name) {
   });
 }
 function deleted(){
-  deleting("result")
-  deleting("todo")
+  useEffect(()=>{
+    const userId = authService.currentUser.uid;
+  }, []);
+
+  deleting("result");
+  deleting("todo");
 }
 export default deleted();
