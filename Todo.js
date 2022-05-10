@@ -1,5 +1,5 @@
 import { authService, dbService } from "./fbase";
-import * as React from 'react';
+import * as React from "react";
 import {
   addDoc,
   collection,
@@ -29,7 +29,7 @@ const Todo = ({ navigation, route }) => {
         text: todo,
         createdAt: Date.now(),
         completed: false,
-        createdId: authService.currentUser.uid,
+        userId: authService.currentUser.uid,
       });
     }
     navigation.navigate("Home");

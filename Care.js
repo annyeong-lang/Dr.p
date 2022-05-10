@@ -1,12 +1,10 @@
 import { dbService } from "./fbase";
 import { doc, getDoc } from "firebase/firestore";
-
-import { Fontisto } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
-import { Foundation } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import React, { useEffect, useState } from "react";
+import { Foundation } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import {
   StyleSheet,
   Text,
@@ -16,7 +14,7 @@ import {
   Image,
 } from "react-native";
 
-const Care = ({ route }) => {
+const Care = ({ navigation, route }) => {
   const [care, setCare] = useState({});
   const [ingr, setIngr] = useState([]);
   const [amount, setAmount] = useState([]);
@@ -64,33 +62,31 @@ const Care = ({ route }) => {
         </ScrollView>
       </View>
       <View style={styles.menu}>
-        <TouchableOpacity onPress={() => navigation.navigate('analysis')}>
-        <Entypo
-            name="clipboard"
-            size={40}
-            color="black"
-            
-          />
+        <TouchableOpacity onPress={() => navigation.navigate("analysis")}>
+          <Entypo name="clipboard" size={40} color="black" />
           <Text style={styles.menuText}>진단</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-            signOut(authService);
-            navigation.navigate("Login");
-          }}>
-        <Foundation name="results" size={42} color="black" />
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <Foundation name="results" size={42} color="black" />
           <Text style={styles.menuText}>결과</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("drugStoreScreen")}>
-        <MaterialCommunityIcons
+        <TouchableOpacity
+          onPress={() => navigation.navigate("drugStoreScreen")}
+        >
+          <MaterialCommunityIcons
             name="map-marker-radius-outline"
             size={47}
             color="black"
-            
           />
           <Text style={styles.menuText}>지도</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-        <AntDesign name="setting" size={40} color="black"  onPress={() => navigation.navigate("setting_main")} />
+          <AntDesign
+            name="setting"
+            size={40}
+            color="black"
+            onPress={() => navigation.navigate("setting_main")}
+          />
           <Text style={styles.menuText}>설정</Text>
         </TouchableOpacity>
       </View>

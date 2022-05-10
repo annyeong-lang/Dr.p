@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { WebView } from "react-native-webview";
 import * as Location from "expo-location";
 import { View, Text, Pressable, Linking } from "react-native";
@@ -11,7 +11,7 @@ export default function Drugstore() {
   }
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
-      <View style={{ marginLeft: 10, marginTop: 20, marginBottom: 10 }}>
+      <View style={{ marginLeft: 20, marginBottom: 10 }}>
         <Text style={{ fontSize: 24 }}>사용자의 위치와</Text>
         <Text style={{ fontSize: 24, marginBottom: 5 }}>
           가까운 약국 지도입니다
@@ -21,10 +21,10 @@ export default function Drugstore() {
       </View>
       <WebView
         source={{
-          uri: "https://gee1suu.github.io/getPosition/",
+          uri: "https://gee1suu.github.io/getPosition",
         }}
         geolocationEnabled={true}
-        style={{ flex: 1, marginHorizontal: 10 }}
+        style={{ flex: 1, marginRight: 10 }}
       />
       <View style={{ alignItems: "center", marginVertical: 20 }}>
         <Pressable

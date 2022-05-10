@@ -5,7 +5,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { useState } from "react";
-import * as React from 'react'; 
+import * as React from "react";
 
 import {
   StyleSheet,
@@ -56,7 +56,7 @@ const SignUp = ({ navigation }) => {
             displayName: userName,
           });
           await signInWithEmailAndPassword(authService, email, password);
-          navigation.reset({ routes: [{ name: "start" }] });
+          navigation.reset({ routes: [{ name: "Start" }] });
         }}
       >
         <Text style={styles.btn}>등록하기</Text>

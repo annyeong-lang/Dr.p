@@ -1,9 +1,7 @@
 import { dbService, authService } from "./fbase";
-import { signOut } from "firebase/auth";
-import React, { useState, useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
 import { Fontisto } from "@expo/vector-icons";
-
 import {
   query,
   collection,
@@ -13,10 +11,10 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import { Foundation } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import { Foundation } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import {
   ScrollView,
   StyleSheet,
@@ -77,7 +75,7 @@ const Home = ({ navigation }) => {
           <ScrollView persistentScrollbar={true}>
             {todos.map(
               (todo) =>
-                todo.createdId === authService.currentUser.uid && (
+                todo.userId === authService.currentUser.uid && (
                   <View key={todo.id} style={styles.todoList}>
                     {todo.completed ? (
                       <TouchableOpacity
@@ -129,10 +127,10 @@ const Home = ({ navigation }) => {
             )}
           </ScrollView>
           {todos.map((todo) => {
-            todo.createdId === authService.currentUser.uid && todo.completed
+            todo.userId === authService.currentUser.uid && todo.completed
               ? comNum++
               : null;
-            todo.createdId === authService.currentUser.uid ? allNum++ : null;
+            todo.userId === authService.currentUser.uid ? allNum++ : null;
           })}
           <View style={{ margin: 10, flexDirection: "row" }}>
             <View style={styles.todoBars}>
@@ -225,9 +223,9 @@ const Home = ({ navigation }) => {
                       </TouchableOpacity>
                     </View>
                     <Text style={styles.resultText}>
-                      {result.date.toString().substring(0, 4)}년{" "}
-                      {result.date.toString().substring(4, 6)}월{" "}
-                      {result.date.toString().substring(6, 8)}일
+                      {new Date(result.date).getFullYear()}년{" "}
+                      {new Date(result.date).getMonth() + 1}월{" "}
+                      {new Date(result.date).getDate()}일
                     </Text>
                     <Text style={styles.resultText}>결과: {result.result}</Text>
                     <Text style={styles.resultText}>관리: {result.care}</Text>
@@ -238,35 +236,31 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
       <View style={styles.menu}>
-        <TouchableOpacity onPress={() => navigation.navigate("start")}>
-        <Entypo
-            name="clipboard"
-            size={40}
-            color="black"
-            
-          />
+        <TouchableOpacity onPress={() => navigation.navigate("Start")}>
+          <Entypo name="clipboard" size={40} color="black" />
           <Text style={styles.menuText}>진단</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            signOut(authService);
-            navigation.navigate("Login");
-          }}
-        >
+        <TouchableOpacity>
           <Foundation name="results" size={42} color="black" />
           <Text style={styles.menuText}>결과</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("drugStoreScreen")}>
-        <MaterialCommunityIcons
+        <TouchableOpacity
+          onPress={() => navigation.navigate("drugStoreScreen")}
+        >
+          <MaterialCommunityIcons
             name="map-marker-radius-outline"
             size={47}
             color="black"
-       
           />
           <Text style={styles.menuText}>지도</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-        <AntDesign name="setting" size={40} color="black" onPress={() => navigation.navigate("setting_main")} />
+          <AntDesign
+            name="setting"
+            size={40}
+            color="black"
+            onPress={() => navigation.navigate("setting_main")}
+          />
           <Text style={styles.menuText}>설정</Text>
         </TouchableOpacity>
       </View>

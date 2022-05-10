@@ -1,20 +1,25 @@
-import React, { useState, useEffect,  } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Pressable,Image,  } from 'react-native';
-import { Camera } from 'expo-camera';
-import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Pressable,
+  Image,
+} from "react-native";
+import { Camera } from "expo-camera";
+import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
+import * as ImagePicker from "expo-image-picker";
 import * as MediaLibrary from "expo-media-library";
 
-export default function App({navigation}) {
+export default function App({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const cameraRef = React.useRef(null);
   const [imgUri, setImgUri] = useState(null);
   const [cameraRollPer, setCameraRollPer] = useState(false);
 
-
-
-const pickImage = async () => {
+  const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -29,12 +34,10 @@ const pickImage = async () => {
     }
   };
 
-
-
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === 'granted');
+      setHasPermission(status === "granted");
     })();
   }, []);
   const getPicture = async () => {
@@ -50,63 +53,70 @@ const pickImage = async () => {
   if (hasPermission === false) {
     return <Text>No access to camera</Text>;
   }
-  if(imgUri===null)
-  return (
-    <View style={styles.container}>
-      <View style={{flex:1}}>
-        <Camera  style={{
+  if (imgUri === null)
+    return (
+      <View style={styles.container}>
+        <View style={{ flex: 1 }}>
+          <Camera
+            style={{
               height: 580,
               width: 430,
-            }} captureAudio={false} type={type} ref={cameraRef}  >
-        
-        </Camera>
-      </View>
-
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            setType(
-              type === Camera.Constants.Type.back
-                ? Camera.Constants.Type.front
-                : Camera.Constants.Type.back
-            );
-          }}>
-          <Text style={styles.text}> Flip </Text>
-        </TouchableOpacity>
-       
-      
-<TouchableOpacity style={{ marginTop:20, alignSelf: 'center' }} onPress= {getPicture}>
-            <View style={{
-              borderWidth: 2,
-              borderRadius: 70 / 2,
-              borderColor: 'lightgrey',
-              height: 70,
-              width: 70,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
             }}
-            >
-              <View style={{
+            captureAudio={false}
+            type={type}
+            ref={cameraRef}
+          ></Camera>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              setType(
+                type === Camera.Constants.Type.back
+                  ? Camera.Constants.Type.front
+                  : Camera.Constants.Type.back
+              );
+            }}
+          >
+            <Text style={styles.text}> Flip </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{ marginTop: 20, alignSelf: "center" }}
+            onPress={getPicture}
+          >
+            <View
+              style={{
                 borderWidth: 2,
-                borderRadius: 60 / 2,
-                borderColor: 'lightgrey',
-                height: 60,
-                width: 60,
-                backgroundColor: 'white'
-              }} >
-              </View>
+                borderRadius: 70 / 2,
+                borderColor: "lightgrey",
+                height: 70,
+                width: 70,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  borderWidth: 2,
+                  borderRadius: 60 / 2,
+                  borderColor: "lightgrey",
+                  height: 60,
+                  width: 60,
+                  backgroundColor: "white",
+                }}
+              ></View>
             </View>
           </TouchableOpacity>
 
-
-      <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>  </Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.text}> </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  );
+    );
 
   return (
     <View style={styles.container}>
@@ -115,12 +125,12 @@ const pickImage = async () => {
       <Text style={{ fontSize: 20 }}>밝은 곳에서 피부가 잘 보이도록</Text>
       <Text style={{ fontSize: 20 }}>사진을 촬영해주세요</Text>
       <Image
-            style={{
-              height: 200,
-              width: 200,
-            }}
-            source={{ uri: imgUri }}
-          />
+        style={{
+          height: 200,
+          width: 200,
+        }}
+        source={{ uri: imgUri }}
+      />
       <Pressable
         onPress={() => navigation.navigate("result")}
         style={styles.pBtn}
@@ -137,7 +147,10 @@ const pickImage = async () => {
           >
             <Text style={{ fontSize: 20, margin: 5 }}>갤러리</Text>
           </Pressable>
-          <Pressable style={{ ...styles.pBtn, marginHorizontal: 10 }} onPress={() => navigation.navigate('camera')}>
+          <Pressable
+            style={{ ...styles.pBtn, marginHorizontal: 10 }}
+            onPress={() => navigation.navigate("camera")}
+          >
             <Text style={{ fontSize: 20, margin: 5, color: "white" }}>
               카메라
             </Text>
@@ -146,14 +159,13 @@ const pickImage = async () => {
       ) : null}
     </View>
   );
-};
-
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    justifyContent: "center",
   },
   camera: {
     width: 300,
@@ -161,53 +173,54 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 0.23,
-    backgroundColor: '#F2F2F2',
-    flexDirection: 'row',
+    backgroundColor: "#F2F2F2",
+    flexDirection: "row",
     margin: 5,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   button: {
-        marginBottom:83,
+    marginBottom: 83,
 
     backgroundColor: "#8A47EB",
     flex: 0.3,
-    alignSelf: 'flex-end',
-    alignItems: 'center',
+    alignSelf: "flex-end",
+    alignItems: "center",
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     borderBottomStartRadius: 5,
     borderTopLeftRadius: 5,
   },
-   btStyle: {
-    alignItems:'center',
-    width: '80%',
+  btStyle: {
+    alignItems: "center",
+    width: "80%",
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
-    borderBottomStartRadius:5,
+    borderBottomStartRadius: 5,
     borderTopLeftRadius: 5,
-    backgroundColor: '#8A47EB',
-    height:'20%'
+    backgroundColor: "#8A47EB",
+    height: "20%",
   },
   button1: {
     backgroundColor: "#8A47EB",
     flex: 0.3,
-    alignSelf: 'flex-end',
-    alignItems: 'center',
+    alignSelf: "flex-end",
+    alignItems: "center",
     borderRadius: 50,
     width: 100,
     height: 100,
   },
   text: {
     fontSize: 18,
-    color: 'white',
-  }, logo: {
+    color: "white",
+  },
+  logo: {
     fontSize: 30,
     height: 50,
-    color: 'black',
+    color: "black",
     marginTop: 60,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginStart: 20,
   },
   logo2: {
@@ -219,10 +232,10 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   btnSpace: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 80,
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 
   bStyle1: {
@@ -235,11 +248,11 @@ const styles = StyleSheet.create({
   },
   btStyle1: {
     fontSize: 30,
-    fontWeight: '500',
-    color: 'black',
-    backgroundColor: '#F2F2F2',
-    textAlign: 'center',
-    textAlignVertical: 'center',
+    fontWeight: "500",
+    color: "black",
+    backgroundColor: "#F2F2F2",
+    textAlign: "center",
+    textAlignVertical: "center",
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
@@ -247,20 +260,19 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 5,
   },
   btStyle2: {
-    fontWeight: '500',
-    color: 'black',
+    fontWeight: "500",
+    color: "black",
     fontSize: 30,
 
-    backgroundColor: '#8A47EB',
-    textAlign: 'center',
-    textAlignVertical: 'center',
+    backgroundColor: "#8A47EB",
+    textAlign: "center",
+    textAlignVertical: "center",
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     borderBottomStartRadius: 5,
     borderTopLeftRadius: 5,
   },
-
 
   pBtn: {
     backgroundColor: "#8A47EB",
