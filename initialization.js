@@ -1,8 +1,10 @@
 import React from "react"
 import {Pressable,Modal, Button,Box} from "native-base"
 import { useState } from "react"
+import { getAuth, deleteUser,onAuthStateChanged } from "firebase/auth";
 import deleted from "./format"
 const color="#F6F0FF"
+
 export default function Format(){
    const [showModal, setShowModal] = useState(false)
   return (
@@ -29,7 +31,16 @@ export default function Format(){
               >아니요</Button>
               <Button
               colorScheme="violet"
-                onPress={() => {
+                onPress={() => {          
+                  const auth = getAuth();
+                  onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                      deleteUser(user).then(() => {
+                        console.log("deleted")
+                      }).catch((error) => {
+                       console.log(error)
+                      });
+                    } else {}});
                   deleted
                   setShowModal(false)
                 }}
