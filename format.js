@@ -1,5 +1,4 @@
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { useEffect } from "react";
 import dbService from "./fbase";
 import { authService } from "./fbase";
 
@@ -18,10 +17,7 @@ function deleting(collection_name) {
   });
 }
 function deleted(){
-  useEffect(()=>{
-    const userId = authService.currentUser.uid;
-  }, []);
-
+  const userId = authService.currentUser.uid;
   deleting("result");
   deleting("todo");
 }
