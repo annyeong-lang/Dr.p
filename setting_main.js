@@ -10,7 +10,6 @@ import {
   Divider,
   Box,
 } from "native-base";
-import Permission from "./setLocation";
 import Format from "./initialization";
 import Logout from "./Logout";
 import { Text } from "react-native";
@@ -26,8 +25,6 @@ export default function Setting({ navigation }) {
           <Text style={{ fontSize: 24, textAlign: "center", marginBottom: 20 }}>
             설정
           </Text>
-          <Permission />
-          <Divider mb="1" bg="#8A47EB" />
           <Format />
           <Divider mb="1" bg="#8A47EB" />
           <Logout />

@@ -5,10 +5,12 @@ import { authService, dbService } from "./fbase";
 import { addDoc, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import * as MediaLibrary from "expo-media-library";
-import * as React from 'react'; 
+import * as React from "react";
 
 const Analysis = ({ navigation }) => {
   const [cameraRollPer, setCameraRollPer] = useState(false);
+  const [results, setResults] = useState();
+  const [imgUri, setImgUri] = useState();
 
   useEffect(async () => {
     await ImagePicker.requestMediaLibraryPermissionsAsync().then(() =>
@@ -21,15 +23,8 @@ const Analysis = ({ navigation }) => {
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       base64: true,
     });
-    if (result.cancelled) {
-      return;
-    } else {
-      await toServer({
-        type: result.type,
-        base64: result.base64,
-        uri: result.uri,
-      });
-    }
+    setResults(result);
+    setImgUri(result.uri);
   };
 
   const toServer = async (mediaFile) => {
@@ -97,9 +92,19 @@ const Analysis = ({ navigation }) => {
       <Text style={{ fontSize: 30 }}>사진을 첨부해주세요</Text>
       <Text style={{ fontSize: 20 }}>밝은 곳에서 피부가 잘 보이도록</Text>
       <Text style={{ fontSize: 20 }}>사진을 촬영해주세요</Text>
-      <Image source={require("./noimg.png")} />
+      {imgUri ? (
+        <Image style={{ width: 200, height: 200 }} source={{ uri: imgUri }} />
+      ) : (
+        <Image source={require("./noimg.png")} />
+      )}
       <Pressable
-        onPress={() => navigation.navigate("result")}
+        onPress={async () => {
+          await toServer({
+            type: results.type,
+            base64: results.base64,
+            uri: results.uri,
+          });
+        }}
         style={styles.pBtn}
       >
         <Text style={{ fontSize: 20, margin: 5, color: "white" }}>
@@ -109,12 +114,18 @@ const Analysis = ({ navigation }) => {
       {cameraRollPer ? (
         <View style={{ flexDirection: "row", marginTop: 30 }}>
           <Pressable
-            onPress={pickMedia}
+            onPress={() => {
+              pickMedia();
+              console.log(imgUri);
+            }}
             style={{ ...styles.wBtn, marginHorizontal: 10 }}
           >
             <Text style={{ fontSize: 20, margin: 5 }}>갤러리</Text>
           </Pressable>
-          <Pressable style={{ ...styles.pBtn, marginHorizontal: 10 }} onPress={() => navigation.navigate('camera')}>
+          <Pressable
+            style={{ ...styles.pBtn, marginHorizontal: 10 }}
+            onPress={() => navigation.navigate("camera")}
+          >
             <Text style={{ fontSize: 20, margin: 5, color: "white" }}>
               카메라
             </Text>

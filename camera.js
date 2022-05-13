@@ -8,9 +8,10 @@ import {
   Image,
 } from "react-native";
 import { Camera } from "expo-camera";
-import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
-import * as ImagePicker from "expo-image-picker";
+import { authService, dbService } from "./fbase";
+import { addDoc, collection } from "firebase/firestore";
 import * as MediaLibrary from "expo-media-library";
+import * as FS from "expo-file-system";
 
 export default function App({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -18,20 +19,65 @@ export default function App({ navigation }) {
   const cameraRef = React.useRef(null);
   const [imgUri, setImgUri] = useState(null);
   const [cameraRollPer, setCameraRollPer] = useState(false);
+  const [results, setResults] = useState();
 
-  const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
+  const toServer = async (mediaFile) => {
+    let schema = "http://";
+    let host = "3.39.23.209";
+    let port = "5000";
+    let url = "";
+    let content_type = "image/jpeg";
+    url = schema + host + ":" + port;
+
+    let response = await FS.uploadAsync(url, mediaFile.uri, {
+      headers: {
+        "content-type": content_type,
+      },
+      httpMethod: "POST",
+      uploadType: FS.FileSystemUploadType.BINARY_CONTENT,
+    });
+    let num = response.body.toString().slice(1, 2);
+    switch (num) {
+      case "1":
+        num = "면포성 여드름";
+        break;
+      case "2":
+        num = "농포성 여드름";
+        break;
+      case "3":
+        num = "구진성 여드름";
+        break;
+      case "4":
+        num = "결절낭 여드름";
+        break;
+      default:
+        console.log("ERROR!!!");
+    }
+
+    let filename = "";
+
+    const permission = await MediaLibrary.requestPermissionsAsync();
+    if (permission.granted) {
+      const asset = await MediaLibrary.createAssetAsync(mediaFile.uri);
+      filename = asset.filename;
+      MediaLibrary.createAlbumAsync("Images", asset, false).then(() =>
+        console.log("성공")
+      );
+    }
+
+    const docRef = await addDoc(collection(dbService, "result"), {
+      care: "",
+      date: Date.now(),
+      result: num,
+      status: false,
+      userId: authService.currentUser.uid,
+      fileName: filename,
     });
 
-    console.log(result);
-
-    if (!result.cancelled) {
-      setImgUri(result.uri);
-    }
+    navigation.navigate("result", {
+      acne: num,
+      id: docRef.id,
+    });
   };
 
   useEffect(() => {
@@ -44,6 +90,7 @@ export default function App({ navigation }) {
     if (cameraRef) {
       const result = await cameraRef.current.takePictureAsync();
       setImgUri(result.uri);
+      setResults(result);
     }
   };
 
@@ -132,7 +179,13 @@ export default function App({ navigation }) {
         source={{ uri: imgUri }}
       />
       <Pressable
-        onPress={() => navigation.navigate("result")}
+        onPress={async () => {
+          await toServer({
+            type: results.type,
+            base64: results.base64,
+            uri: results.uri,
+          });
+        }}
         style={styles.pBtn}
       >
         <Text style={{ fontSize: 20, margin: 5, color: "white" }}>
@@ -166,6 +219,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
+    alignItems: "center",
   },
   camera: {
     width: 300,
