@@ -31,10 +31,30 @@ const Carelist = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.pic}>
-        <Image
-          style={{ width: 200, height: 200 }}
-          source={require("./noimg.png")}
-        />
+        {name == "면포성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result1.png")}
+          ></Image>
+        ) : null}
+        {name == "농포성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result2.jpg")}
+          ></Image>
+        ) : null}
+        {name == "구진성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result3.jpg")}
+          ></Image>
+        ) : null}
+        {name == "결절낭 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result4.png")}
+          ></Image>
+        ) : null}
       </View>
       <View style={styles.list}>
         <View style={styles.listHeader}>
@@ -112,7 +132,7 @@ const Carelist = ({ navigation, route }) => {
         </View>
       </View>
       <View style={styles.menu}>
-        <TouchableOpacity onPress={() => navigation.navigate("Start")}>
+        <TouchableOpacity onPress={() => navigation.navigate("analysis")}>
           <Entypo name="clipboard" size={40} color="black" />
           <Text style={styles.menuText}>진단</Text>
         </TouchableOpacity>

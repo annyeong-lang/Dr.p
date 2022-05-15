@@ -23,7 +23,30 @@ export default function Main({ navigation, route }) {
   return (
     <View style={Styles.container}>
       <View style={Styles.image}>
-        <Image source={require("./noimg.png")}></Image>
+        {type == "면포성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result1.png")}
+          ></Image>
+        ) : null}
+        {type == "농포성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result2.jpg")}
+          ></Image>
+        ) : null}
+        {type == "구진성 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result3.jpg")}
+          ></Image>
+        ) : null}
+        {type == "결절낭 여드름" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/result4.png")}
+          ></Image>
+        ) : null}
       </View>
       <View style={Styles.num}>
         <MaterialCommunityIcons
@@ -51,7 +74,7 @@ export default function Main({ navigation, route }) {
         <Text style={{ fontSize: 22 }}>{type}</Text>
       </View>
       <View style={Styles.detail}>
-        <Text style={{ lineHeight: 30, fontSize: 20 }}>{detail}</Text>
+        <Text style={{ lineHeight: 35, fontSize: 20 }}>{detail}</Text>
       </View>
       <View style={Styles.button}>
         <TouchableOpacity
@@ -71,7 +94,7 @@ export default function Main({ navigation, route }) {
         </TouchableOpacity>
       </View>
       <View style={Styles.menu}>
-        <TouchableOpacity onPress={() => navigation.navigate("Start")}>
+        <TouchableOpacity onPress={() => navigation.navigate("analysis")}>
           <Entypo name="clipboard" size={40} color="black" />
           <Text style={{ fontWeight: "bold" }}>진단</Text>
         </TouchableOpacity>
@@ -105,6 +128,7 @@ const Styles = StyleSheet.create({
   },
   image: {
     flex: 3.2,
+    alignItems: "center",
   },
   num: {
     flex: 0.8,

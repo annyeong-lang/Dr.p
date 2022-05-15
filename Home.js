@@ -236,7 +236,7 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
       <View style={styles.menu}>
-        <TouchableOpacity onPress={() => navigation.navigate("Start")}>
+        <TouchableOpacity onPress={() => navigation.navigate("analysis")}>
           <Entypo name="clipboard" size={40} color="black" />
           <Text style={styles.menuText}>진단</Text>
         </TouchableOpacity>

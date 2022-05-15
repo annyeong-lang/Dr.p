@@ -106,7 +106,7 @@ function App() {
           name="setting_main"
           component={setting_main}
           options={{
-            title: "",
+            title: "설정",
             headerStyle: {
               backgroundColor: "#F6F0FF",
             },

@@ -35,13 +35,13 @@ export default function Format() {
       <Box p="5" rounded="8" bg={color}>
         <Pressable onPress={() => setShowModal(true)}>
           <Box ml="2" _text={{ fontSize: "xl", color: "#8A47EB" }}>
-            진단 결과 초기화 하기
+            데이터 초기화 하기
           </Box>
         </Pressable>
         <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
           <Modal.Content maxWidth="400px">
             <Modal.CloseButton />
-            <Modal.Header color={color}>진단결과 초기화</Modal.Header>
+            <Modal.Header color={color}>데이터 초기화</Modal.Header>
             <Modal.Body>
               <Box>초기화 후에는 되돌릴 수 없습니다.</Box>
               <Box>계속 진행 하시겠습니까?</Box>

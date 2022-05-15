@@ -29,10 +29,96 @@ const Care = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.pic}>
-        <Image
-          style={{ width: 200, height: 200 }}
-          source={require("./noimg.png")}
-        />
+        {care.name == "파티마겔" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care1_1.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "압출(면포성)" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care2_1.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "아젤리아크림" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care1_3.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "각질 관리" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care1_4.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "압출(농포성)" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care2_1.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "예그린액" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care2_2.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "클리어틴" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care2_3.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "큐아크네" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care2_4.png")}
+          ></Image>
+        ) : null}
+        {care.name == "피부과 방문(구진성)" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care3_1.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "메이크업" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care3_2.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "흉터 관리" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care3_3.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "염증 관리" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care3_4.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "피부과 방문(결절낭)" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care3_1.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "흉터 치료" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care4_2.jpg")}
+          ></Image>
+        ) : null}
+        {care.name == "PDT 시술" ? (
+          <Image
+            style={{ flex: 1 }}
+            source={require("./assets/image/care4_3.jpg")}
+          ></Image>
+        ) : null}
       </View>
       <View style={styles.info}>
         <ScrollView>
