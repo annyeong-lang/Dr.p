@@ -33,11 +33,10 @@ App(WebView)<br>
 역할: deep learning model design<br>
 이메일: flha3690@ewhain.net<br>
 
- ## 3. 현재까지 구현한 코드 설명
-<img src = "https://user-images.githubusercontent.com/80879666/144845933-430cc968-fe0c-401f-b15c-4ca65e1dc51a.png" width="25%" height="25%"> <img src = "https://user-images.githubusercontent.com/80879666/144845942-41cdec78-0342-4246-bd62-fe497caf3858.png" width="25%" height="25%"><br>
- <img src = "https://user-images.githubusercontent.com/80879666/144845950-64bfeade-0d39-4a8a-8ce7-9be71edafec1.png" width="25%" height="25%"> <img src = "https://user-images.githubusercontent.com/80879666/144845961-b185cbc8-3557-4f93-9156-db6f83178346.png" width="25%" height="25%"><br>
- <img src = "https://user-images.githubusercontent.com/80879666/144845970-36b60805-a6f1-4bf9-8a0e-963be2d52e88.png" width="25%" height="25%">
+ ## 3. 개발 환경
 
-최종 완성하려는 프로젝트 내용 중에서 필요한 기능인 갤러리에서 사진을 가져오거나,<br> 카메라를 통해 찍은 사진을 가져오는 기능과
-딥러닝 모델에 입력해 값을 받아와 출력하는 기능을 구현하였다.
+딥러닝 모델: Tensorflow, Keras
+딥러닝 모델 서버: Flask, AWS
+약국 추천 지도: Kakao 지도 API, Nuxt.js
+어플리케이션: React Native
 
