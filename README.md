@@ -35,8 +35,8 @@ App(WebView)<br>
 
  ## 3. 개발 환경
 
-딥러닝 모델: Tensorflow, Keras
-딥러닝 모델 서버: Flask, AWS
-약국 추천 지도: Kakao 지도 API, Nuxt.js
-어플리케이션: React Native
+딥러닝 모델: Tensorflow, Keras<br>
+딥러닝 모델 서버: Flask, AWS<br>
+약국 추천 지도: Kakao 지도 API, Nuxt.js<br>
+어플리케이션: React Native<br>
 
