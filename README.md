@@ -44,8 +44,14 @@ App(WebView)<br>
 약국 추천 지도: Kakao 지도 API, Nuxt.js<br>
 어플리케이션: React Native<br><br>
 
- ## 4. 프로젝트 흐름도
+ ## 4. 레포지토리 정리
+
+https://github.com/annyeong-lang/Dr.p/tree/dl : 여드름 진단 딥러닝 모델 구현
+https://github.com/annyeong-lang/Dr.p/tree/flask : 딥러닝 모델 서버 구현
+https://github.com/annyeong-lang/Dr.p/tree/map : 약국 추천 카카오 맵 api 부분 구현 
+
+ ## 5. 프로젝트 흐름도
 <img src="https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png" width="500" height="500"/><br><br>
 
- ## 5. 시연 동영상
+ ## 6. 시연 동영상
 피부를부탁해 여드름 단계 진단 및 관리법 추천 어플리케이션 시연 동영상 링크 : https://www.youtube.com/embed/R_DirOZiKMk
