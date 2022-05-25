@@ -45,4 +45,7 @@ App(WebView)<br>
 어플리케이션: React Native<br><br>
 
  ## 4. 프로젝트 흐름도
-<img src="https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png" width="500" height="500"/>
+<img src="https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png" width="500" height="500"/><br><br>
+
+ ## 5. 시연 동영상
+https://www.youtube.com/embed/R_DirOZiKMk
