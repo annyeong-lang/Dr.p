@@ -20,7 +20,7 @@ App(WebView)<br>
 ## 2. 팀 소개
 이름: 송연우(komatsu417)<br>
 학번: 1871022<br> 
-역할: 조장, app design<br>
+역할: 팀장, 앱개발 및 테스트<br>
 이메일: younwoo0810@gmail.com<br>
 
 이름: 안지수(gee1suu)<br>
