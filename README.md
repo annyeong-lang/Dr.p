@@ -1,4 +1,4 @@
-# DR. P  (피부 홈케어 어플리케이션)
+# DR. P  (여드름 단계 진단 및 관리법 추천 어플리케이션)
 어플 화면<br><br>
 <img src="https://user-images.githubusercontent.com/80879666/170255072-ed4fd379-7786-44f2-86a5-cd1eab6eff40.jpg" height="400"/>
 <img src="https://user-images.githubusercontent.com/80879666/170255140-92dcec40-56ed-445b-bb5c-fa7f4b63ad1e.jpg" height="400"/>
@@ -48,4 +48,4 @@ App(WebView)<br>
 <img src="https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png" width="500" height="500"/><br><br>
 
  ## 5. 시연 동영상
-https://www.youtube.com/embed/R_DirOZiKMk
+피부를부탁해 여드름 단계 진단 및 관리법 추천 어플리케이션 시연 동영상 링크 : https://www.youtube.com/embed/R_DirOZiKMk
