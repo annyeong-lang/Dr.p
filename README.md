@@ -1,8 +1,9 @@
 # DR. P  (피부 홈케어 어플리케이션)
+어플 화면<br><br>
 <img src="https://user-images.githubusercontent.com/80879666/170255072-ed4fd379-7786-44f2-86a5-cd1eab6eff40.jpg" height="500"/>
 <img src="https://user-images.githubusercontent.com/80879666/170255140-92dcec40-56ed-445b-bb5c-fa7f4b63ad1e.jpg" height="500"/>
 <img src="https://user-images.githubusercontent.com/80879666/170255561-65a1abea-51c3-4e5c-bc3b-012e671128d5.jpg" height="500"/>
-<img src="https://user-images.githubusercontent.com/80879666/170255574-f87b8d97-266e-40f8-a456-c533267daf96.jpg" height="500"/>
+<img src="https://user-images.githubusercontent.com/80879666/170255574-f87b8d97-266e-40f8-a456-c533267daf96.jpg" height="500"/><br>
 <img src="https://user-images.githubusercontent.com/80879666/170255584-1f0b4e07-89d9-443f-b7ad-ea81b18c4368.jpg" height="500"/>
 <img src="https://user-images.githubusercontent.com/80879666/170255603-721ea90d-a6d1-408a-9728-944ffd4fc723.jpg" height="500"/>
 <img src="https://user-images.githubusercontent.com/80879666/170255618-679501fa-e2cd-4d6e-b478-8a479d83b98e.jpg" height="500"/>
