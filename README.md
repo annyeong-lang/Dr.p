@@ -40,4 +40,4 @@ App(WebView)<br>
 어플리케이션: React Native<br><br>
 
  ## 4. 프로젝트 흐름도
-![졸프 포스터 디자인 (1)](https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png)
+<img src="https://user-images.githubusercontent.com/56216936/170252942-d5ccc2bc-9ec1-440f-825a-9cb89b66b526.png" width="500" height="500"/>
