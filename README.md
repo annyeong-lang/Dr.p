@@ -30,7 +30,7 @@ App(WebView)<br>
 
 이름: 안지수(gee1suu)<br>
 학번: 1615038<br>
-역할:  deep learning model design<br>
+역할:  앱개발, 딥러닝모델 개발<br>
 이메일: gee1suu@gmail.com<br>
 
 이름: 임하영 (annyeong-lang)<br>
