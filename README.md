@@ -46,6 +46,7 @@ App(WebView)<br>
 
  ## 4. 레포지토리 정리
 
+https://github.com/annyeong-lang/Dr.p/tree/comp.i: 여드름 진단 및 관리법 추천 어플리케이션 메인 완성본<br>
 https://github.com/annyeong-lang/Dr.p/tree/dl : 여드름 진단 딥러닝 모델 구현<br>
 https://github.com/annyeong-lang/Dr.p/tree/flask : 딥러닝 모델 서버 구현<br>
 https://github.com/annyeong-lang/Dr.p/tree/map : 약국 추천 카카오 맵 api 부분 구현<br> 
