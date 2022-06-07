@@ -1,7 +1,7 @@
 
 ## Quick Start Guide
 
-apk 파일 링크 : https://github.com/annyeong-lang/Dr.p/tree/comp.i/%EC%8B%A4%ED%96%89%ED%8C%8C%EC%9D%BC
+apk 파일 다운로드 링크 : (https://github.com/annyeong-lang/Dr.p/raw/comp.i/%EC%8B%A4%ED%96%89%ED%8C%8C%EC%9D%BC/drp-5e21a056ac584ac7b921577af711e2a2-signed.apk)
 
 ![제품설명서 (3)-2](https://user-images.githubusercontent.com/56216936/172293281-e78924be-6d93-4865-bc12-944342a148f8.png)
 ![제품설명서 (3)-3](https://user-images.githubusercontent.com/56216936/172293284-8cd5e1b1-493b-4c28-9e9d-0b96cf183a3b.png)
